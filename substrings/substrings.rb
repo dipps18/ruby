@@ -1,10 +1,10 @@
 def substrings(string,dictionary)
     result = Hash.new(0)
-    string.downcase!
+    string_lower=string.downcase
     
     dictionary.filter_map do |element|
-        element.downcase!
-        result[element]=(string.scan(element).length) if(string.include?(element))
+        element_lower=element.downcase
+        result[element_lower]=(string_lower.scan(element_lower).length) if(string_lower.include?(element_lower))
     end
     result
 end
